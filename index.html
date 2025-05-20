@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"> <span>KJ</span> Web</a>
+        <nav class="navbar">
+            <a href=#checkin>Check In</a>
+            <a href="IniciarSesion" id="login-btn">Iniciar sesión</a>
+        </nav>
+    </header>
+
+    <div class="login-form-container">
+        <i class="fas fa-times" id="form-close"></i>
+
+        <form id="login-form" method="POST" action="/login">
+            <h3>Iniciar sesión</h3>
+            <input type="email" name="email" class="box" placeholder="Ingresá tu email">
+            <input type="password" name="password" class="box" placeholder="Contraseña">
+            <input type="submit" value="Ingresar" class="btn">
+            <input type="checkbox" id="remember">
+            <label for="remember">Recordar Contraseña</label>
+            <p>¿Olvidaste tu contraseña? <a href="#">Click aquí</a></p>
+            <p>¿Aun no tienes una cuenta?<a href="#">Registrarme</a></p>
+        </form>
+
+
+    </div>
+
+    <section class="home" id="home">
+        <div class="video-container">
+            <video src="img/videos/7498650-uhd_3840_2160_30fps.mp4" id="video-slider" loop autoplay muted></video>
+        </div>
+    </section>
+
+    <section class="data-box">
+        <h2>Bienvenido! Tus reservas, más simples.</h2>
+        <p>Hoteles y alojamientos donde vayas.</p>
+        <input type="text" id="search-box" placeholder="Ciudad o provincia">
+
+    <!-- Selector -->
+    <label for="opciones">Tipo de alojamiento:</label>
+    <select id="opciones">
+        <option value="op1">Hotel</option>
+        <option value="op2">Hostel</option>
+        <option value="op3">Cabaña</option>
+    </select>
+
+    <!-- Fechas -->
+    <label for="fecha-inicio">Fecha de inicio:</label>
+    <input type="date" id="fecha-inicio">
+
+    <label for="fecha-fin">Fecha de fin:</label>
+    <input type="date" id="fecha-fin">
+
+    <!-- Botón -->
+    <button id="btnBuscar" class="btn">Buscar</button>
+    </section>
+  
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("btnBuscar").addEventListener("click", function () {
+          window.location.href = "Habitaciones.html";
+        });
+      </script>
+</body>
+</html>
