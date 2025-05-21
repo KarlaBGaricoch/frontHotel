@@ -94,3 +94,71 @@ function registrarse() {
 
 //Panel admin
 
+// Obtener el botón del menú y el panel lateral
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.menu');
+const cerrarSesionBtn = document.querySelector('.menu-items button:last-child');
+
+// Mostrar el menú cuando el botón de menú es clickeado
+menuBtn.addEventListener('click', () => {
+  menu.style.left = '0'; // Muestra el menú
+  document.body.style.marginLeft = '320px'; // Desplaza el contenido para dar espacio al menú
+});
+
+// Función para ocultar el menú
+function cerrarMenu() {
+  menu.style.left = '-320px'; // Esconde el menú
+  document.body.style.marginLeft = '0'; // Vuelve el contenido a su posición inicial
+}
+
+// Agregar funcionalidad al botón de Cerrar Sesión
+cerrarSesionBtn.addEventListener('click', () => {
+  // Aquí puedes agregar la lógica para cerrar sesión, por ejemplo:
+  alert('Has cerrado sesión');
+  // Luego, puedes redirigir al usuario a otra página o hacer otra acción.
+});
+
+// Opcional: Ocultar el menú al hacer clic fuera de él (esto cierra el menú si se hace clic fuera de él)
+document.addEventListener('click', (event) => {
+  if (!menu.contains(event.target) && event.target !== menuBtn) {
+    cerrarMenu(); // Cierra el menú si se hace clic fuera de él
+  }
+});
+
+// Función para obtener y mostrar la hora actual
+function mostrarFechaHora() {
+  const fecha = new Date();
+  const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+  document.getElementById('fecha-hora').textContent = fecha.toLocaleDateString('es-ES', opciones);
+}
+
+// Función para obtener y mostrar el clima actual
+async function obtenerClima() {
+  const apiKey = '056aeaf85fadd82f8edc062c6ac78557'; // Reemplaza con tu API key real
+  const ciudad = 'Formosa'; // Cambia por tu ciudad si querés
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&lang=es&units=metric`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const ciudadNombre = data.name;
+    const temperatura = data.main.temp;
+    const descripcion = data.weather[0].description;
+    const icono = data.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${icono}@2x.png`;
+
+    document.getElementById('clima').innerHTML = `
+      <h2>Clima en ${ciudadNombre}</h2>
+      <img src="${iconUrl}" alt="Icono del clima">
+      <p>${temperatura}°C - ${descripcion}</p>
+    `;
+  } catch (error) {
+    console.error('Error al obtener el clima:', error);
+    document.getElementById('clima').textContent = 'No se pudo obtener el clima';
+  }
+}
+
+// Llamar a las funciones para mostrar la fecha/hora y clima al cargar la página
+mostrarFechaHora();
+obtenerClima();

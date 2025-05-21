@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Administrativo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Menú Lateral -->
+  <div class="menu">
+    <div class="menu-header">
+      <img src="img/fotos/Gong_Yoo33.webp" alt="Foto de perfil" class="foto-perfil" />
+      <h2>Bienvenido</h2>
+    </div>
+    <div class="menu-items">
+      <button><i class="fa fa-check"></i> Ver Check-In Realizados</button>
+      <button><i class="fa fa-bed"></i> Disponibilidad de Habitaciones</button>
+      <button><i class="fa fa-door-closed"></i> Habitaciones Ocupadas</button>
+      <button><i class="fa fa-plus"></i> Cargar Nueva Habitación</button>
+      <button><i class="fa fa-sign-out-alt"></i> Cerrar Sesión</button>
+    </div>
+  </div>
+
+  <!-- Contenido Principal -->
+  <div class="contenido">
+    <button class="menu-btn">&#9776;</button>
+
+    <div id="resultado">
+      <h2>Admistrador</h2>
+      <p>Gong Yoo.</p>
+    </div>
+
+    <div class="info-panel" id="clima">
+      <h2>Clima Actual</h2>
+      <p id="weather-info">Cargando clima...</p>
+    </div>
+
+    <div class="info-panel" id="fecha-hora">
+      <h2>Fecha y Hora</h2>
+      <p id="datetime">Cargando hora...</p>
+    </div>
+  </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
