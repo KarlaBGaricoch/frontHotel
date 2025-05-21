@@ -183,5 +183,25 @@ document.getElementById("formHabitacion").addEventListener("submit", function (e
 });
 
 
-//Habitaciones
+//Habitaciones estrella 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const stars = document.querySelectorAll('.packages .box-container .box .content .stars i');  // Selecciona las estrellas
+    const valoracionSeleccionada = document.getElementById('valoracionSeleccionada');  // Elemento donde se muestra la valoración
+
+    stars.forEach(star => {
+        star.addEventListener('click', function () {
+            const valor = this.getAttribute('data-value');  // Obtén el valor de la estrella seleccionada
+            valoracionSeleccionada.textContent = valor;  // Muestra la puntuación seleccionada
+
+            // Marca las estrellas como seleccionadas
+            stars.forEach(star => {
+                if (star.getAttribute('data-value') <= valor) {
+                    star.classList.add('selected');  // Estrella seleccionada
+                } else {
+                    star.classList.remove('selected');  // Estrella no seleccionada
+                }
+            });
+        });
+    });
+});

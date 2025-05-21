@@ -317,6 +317,17 @@ section.packages {
     padding: 2rem;
 }
 
+.packages .box-container .box .content .stars i {
+    font-size: 1.7rem;
+    color: gray;  /* Color inicial de las estrellas, gris para no seleccionadas */
+    cursor: pointer;  /* Añadimos un puntero para que el usuario vea que puede hacer clic */
+}
+
+.packages .box-container .box .content .stars i:hover,
+.packages .box-container .box .content .stars i.selected {
+    color: orange;  /* Cuando pasa el ratón o está seleccionada, cambia a naranja */
+}
+
 .packages .box-container .box .content h3{
     font-size: 2rem;
     color: #333;
@@ -331,11 +342,6 @@ section.packages {
     font-size: 1.7rem;
     color: #333;
     padding: 1rem 0;
-}
-
-.packages .box-container .box .content .stars i{
-    font-size: 1.7rem;
-    color: orange;
 }
 
 .packages .box-container .box .content .price{
@@ -688,3 +694,4 @@ body {
     grid-column: span 1;
   }
 }
+
