@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habitaciones cargar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Menú Lateral -->
+  <div class="menu">
+    <div class="menu-header">
+      <img src="img/fotos/Gong_Yoo33.webp" alt="Foto de perfil" class="foto-perfil" />
+      <h2>Bienvenido</h2>
+    </div>
+    <div class="menu-items">
+      <button><i class="fa fa-check"></i> Ver Check-In Realizados</button>
+      <button><i class="fa fa-bed"></i> Disponibilidad de Habitaciones</button>
+      <button><i class="fa fa-door-closed"></i> Habitaciones Ocupadas</button>
+      <button><i class="fa fa-plus"></i> Cargar Nueva Habitación</button>
+      <button><i class="fa fa-sign-out-alt"></i> Cerrar Sesión</button>
+    </div>
+  </div>
+
+  <!-- Contenido Principal -->
+  <div class="contenido">
+    <button class="menu-btn">&#9776;</button>
+
+  <div class="formulario-habitacion">
+  <h2>Cargar Nueva Habitación</h2>
+  <form id="formHabitacion">
+    <label for="nombreHotel">Nombre del Hotel</label>
+    <input type="text" id="nombreHotel" name="nombreHotel" placeholder="Ej: Hotel Sol y Mar" required />
+
+    <label for="ciudad">Ciudad</label>
+    <input type="text" id="ciudad" name="ciudad" placeholder="Ej: Buenos Aires" required />
+
+    <label for="tipo">Tipo</label>
+    <select id="tipo" name="tipo" required>
+      <option value="">Seleccionar</option>
+      <option value="hotel">Hotel</option>
+      <option value="hostel">Hostel</option>
+      <option value="cabaña">Cabaña</option>
+    </select>
+
+    <label for="descripcion">Descripción</label>
+    <textarea id="descripcion" name="descripcion" placeholder="Describe la habitación" rows="3" required></textarea>
+
+    <label for="servicios">Servicios (separados por comas)</label>
+    <input type="text" id="servicios" name="servicios" placeholder="WiFi, TV, Desayuno" required />
+
+    <label for="fotos">URLs de Fotos (separadas por comas)</label>
+    <input type="text" id="fotos" name="fotos" placeholder="https://foto1.jpg, https://foto2.jpg" required />
+
+    <label for="precio">Precio por Noche (AR)</label>
+    <input type="number" id="precio" name="precio" placeholder="Ej: 80.000" min="0" required />
+
+    <button type="submit">Guardar</button>
+  </form>
+</div>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

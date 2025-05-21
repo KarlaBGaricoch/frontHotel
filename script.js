@@ -162,3 +162,26 @@ async function obtenerClima() {
 // Llamar a las funciones para mostrar la fecha/hora y clima al cargar la página
 mostrarFechaHora();
 obtenerClima();
+
+document.getElementById("formHabitacion").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const datos = {
+    nombreHotel: this.nombreHotel.value,
+    ciudad: this.ciudad.value,
+    tipo: this.tipo.value,
+    descripcion: this.descripcion.value,
+    servicios: this.servicios.value.split(',').map(s => s.trim()),
+    fotos: this.fotos.value.split(',').map(url => url.trim()),
+    precio: parseFloat(this.precio.value),
+  };
+
+  console.log("Habitación cargada:", datos);
+  alert("Habitación guardada correctamente ✅");
+
+  this.reset();
+});
+
+
+//Habitaciones
+
