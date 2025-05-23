@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio de Sesión</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-left">
+      <img src="img/fotos/Como-decorar-una-habitacion-de-un-hotel.jpg" alt="Imagen de fondo" />
+    </div>
+    <div class="login-right">
+      <div class="login-form">
+        <h2>Reservá en Rogel</h2>
+        <p class="precio">Precio por noche: <strong>$98.000</strong></p>
+        <form>
+          <input type="text" placeholder="Nombre completo" required />
+          <input type="email" placeholder="Correo electrónico" required />
+          <label for="entrada">Fecha de entrada</label>
+          <input type="date" id="entrada" required />
+          <label for="salida">Fecha de salida</label>
+          <input type="date" id="salida" required />
+          <button type="submit">Reservar</button>
+        </form>
+        <p class="cuenta">¿Ya tenés cuenta? <a href="#">Iniciá sesión</a></p>
+        <p class="cuenta">
+          ¿Sos nuevo? 
+          <button class="btn-registrarse" onclick="window.location.href='registro.html'">Registrate</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
